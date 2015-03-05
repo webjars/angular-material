@@ -5,20 +5,20 @@
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
-        <version>7</version>
+        <version>9</version>
     </parent>
 
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angular-material</artifactId>
-    <version>0.8.1-SNAPSHOT</version>
+    <version>0.8.3-SNAPSHOT</version>
     <name>angular-material</name>
     <description>WebJar for angular-material</description>
     <url>http://webjars.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>0.8.0</upstream.version>
+        <upstream.version>0.8.3</upstream.version>
         <upstream.url>https://github.com/angular/bower-material/archive/v${upstream.version}.zip</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${version}</destDir>
         <requirejs>
@@ -69,7 +69,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.7</version>
+                <version>1.8</version>
                 <executions>
                     <execution>
                         <phase>process-resources</phase>
@@ -89,13 +89,28 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.1</version>
             </plugin>
-
+            <plugin>
+                <groupId>com.googlecode.todomap</groupId>
+                <artifactId>maven-jettygzip-plugin</artifactId>
+                <version>0.0.4</version>
+                <configuration>
+                    <webappDirectory>target/classes</webappDirectory>
+                    <outputDirectory>target/classes</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
