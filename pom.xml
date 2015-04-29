@@ -27,7 +27,7 @@
                     "angular-material": "angular-material"
                 },
                 "shim": {
-                    "angular-material": ["angular"]
+                    "angular-material": ["angular", "angular-animate","angular-aria"]
                 }
             }
         </requirejs>
