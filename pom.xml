@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angular-material</artifactId>
-    <version>0.10.1-rc3</version>
+    <version>0.10.1-rc3-SNAPSHOT</version>
     <name>angular-material</name>
     <description>WebJar for angular-material</description>
     <url>http://webjars.org</url>
